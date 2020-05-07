@@ -94,30 +94,6 @@ class HashTable:
                 self.resize(self.capacity * 2)
 
 
-        
-    #     if node is not None:
-    #         prev = None
-    #         while node is not None:
-    #             if node.key == key:
-    #                 node.value = value
-    #                 return
-    #             #assign current node to prev
-    #             prev = node
-    #             #next node is assigned to current node
-    #             node = node.next
-    #         prev.next = new_node
-    #         self.entry_count += 1
-    #         #after adding an item, check the load count and resize depending on the result
-    #         if self.load_factor() > .7:
-    #             self.resize(self.capacity)
-    #     # if node doesn't exist create new node and insert into the hash table
-    #     else:
-    #         self.storage[index] = new_node
-    #         self.entry_count += 1
-    #     #after adding an item, check the load count and based on the conditions
-    #     if self.load_factor() > 0.7:
-    #         self.resize(self.capacity)
-
     def delete(self, key):
         """
         Remove the value stored with the given key.
@@ -206,7 +182,7 @@ if __name__ == "__main__":
 
     # Test resizing
     old_capacity = len(ht.storage)
-    ht.resize()
+    ht.resize(ht.capacity * 2)
     new_capacity = len(ht.storage)
 
     print(f"\nResized from {old_capacity} to {new_capacity}.\n")
