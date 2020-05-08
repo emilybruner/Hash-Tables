@@ -2,22 +2,19 @@ def no_dups(s):
     # Implement me.
     storage = dict()
 
+    lower_case = s.lower()
+    words = lower_case.split()
+
 # Loop over the input string, assign each word in the string to a dictionary key
 # for word in storage
-    for word in s:
+    for word in words:
         if word not in storage:
-            storage[word]
-    # index = 0
-    # for i in range(0, s):
-    #     for j in range(0, i + 1):
-    #         if (s[i] == s[j]):
-    #             break
-        
-    #     if (j == i):
-    #         s[index] = s[i]
-    #         index += 1
-    
-    # return "".join(s[:index])
+            storage[word] += 1
+        else:
+            storage[word] = 1
+    s = " ".join(storage.keys())
+    return s
+
 
 
 if __name__ == "__main__":
