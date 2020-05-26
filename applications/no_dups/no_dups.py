@@ -1,5 +1,20 @@
 def no_dups(s):
     # Implement me.
+    storage = dict()
+
+    lower_case = s.lower()
+    words = lower_case.split()
+
+# Loop over the input string, assign each word in the string to a dictionary key
+# for word in storage
+    for word in words:
+        if word not in storage:
+            storage[word] += 1
+        else:
+            storage[word] = 1
+    s = " ".join(storage.keys())
+    return s
+
 
 
 if __name__ == "__main__":
